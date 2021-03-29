@@ -22,6 +22,7 @@
     text-align: center;
   }
 }
+
 .main {
   display: block;
   width: 500px;
@@ -60,6 +61,7 @@
 .btn:hover {
   color: #3a3a3a;
 }
+
 /* Heading */
 .titel,
 .add-item__label {
@@ -108,10 +110,6 @@
   justify-content: space-between;
   align-items: center;
 }
-/*.item > * {
-  vertical-align: middle;
-}
-*/
 .item > .checkbox {
   margin: 0 10px;
 }
