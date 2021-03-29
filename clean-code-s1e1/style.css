@@ -10,10 +10,10 @@
   display: block;
   text-align: right;
 }
-.header img {
+.header__img {
   width: 100%;
 }
-.header .header-link {
+.header__link {
   font-family: fantasy, cursive;
 }
 
@@ -35,19 +35,20 @@
 .top-task {
   display: flex;
 }
-ul {
+.section {
   margin: 0;
   padding: 0px;
 }
-li,
-h3 {
+.item,
+.titel {
   list-style: none;
 }
-input,
-button {
+
+.style-text,
+.btn {
   outline: none;
 }
-button {
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -56,12 +57,12 @@ button {
   font-family: Lato, sans-serif;
   cursor: pointer;
 }
-button:hover {
+.btn:hover {
   color: #3a3a3a;
 }
 /* Heading */
-h3,
-label[for="new-task"] {
+.titel,
+.add-item__label {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -70,7 +71,7 @@ label[for="new-task"] {
   margin: 0;
   text-transform: uppercase;
 }
-input[type="text"] {
+.style-text {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -82,76 +83,75 @@ input[type="text"] {
   font-family: Lato, sans-serif;
   color: #888;
 }
-input[type="text"]:focus {
+.style-text:focus {
   color: #333;
 }
 
 /* New Task */
-label[for="new-task"] {
+.add-item__label {
   display: block;
   margin: 0 0 20px;
 }
-input#new-task {
+#new-task {
   width: 318px;
 }
-p > button:hover {
+.btn-new:hover {
   color: #0fc57c;
 }
 
 /* Task list */
-li {
+.item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-li > * {
+/*.item > * {
   vertical-align: middle;
 }
-
-li > input[type="checkbox"] {
+*/
+.item > .checkbox {
   margin: 0 10px;
 }
-li > label {
+.item > .label_style-text {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
-li > input[type="text"] {
+.item > .input_style-text {
   width: 226px;
 }
-li > button.delete:hover {
+.btn_delete:hover {
   color: #cf2323;
 }
-button.delete img {
+.btn_img {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-button.delete img:hover {
+.btn_img:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-ul#th-section label {
+#complete-tasks .style-text {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-ul li input[type="text"] {
+.input_style-text {
   display: none;
 }
 
-ul li.edit-mode input[type="text"] {
+.edit-mode .input_style-text {
   display: inline-block;
   width: 224px;
 }
 
-ul li.edit-mode label {
+.edit-mode .label_style-text {
   display: none;
 }

@@ -8,9 +8,9 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput = document.getElementById("new-task"); //Add a new task.
-var addButton = document.getElementsByTagName("button")[0]; //first button
-var incompleteTaskHolder = document.getElementById("sec-section"); //ul of #incompleteTasks
-var completedTasksHolder = document.getElementById("th-section"); //completed-tasks
+var addButton = document.querySelector(".btn"); //first button
+var incompleteTaskHolder = document.getElementById("incomplete-tasks"); //ul of #incompleteTasks
+var completedTasksHolder = document.getElementById("complete-tasks"); //completed-tasks
 
 //New task list item
 var createNewTaskElement = function (taskString) {
@@ -30,18 +30,23 @@ var createNewTaskElement = function (taskString) {
   var deleteButtonImg = document.createElement("img"); //delete button image
 
   label.innerText = taskString;
-  label.className = "style-text";
+  label.className = "style-text label_style-text";
 
   //Each elements, needs appending
   checkBox.type = "checkbox";
+  checkBox.className = "checkbox";
+
   editInput.type = "text";
-  editInput.className = "style-text";
+  editInput.className = "style-text input_style-text";
+
+  listItem.className = "item";
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className = "btn-edit";
+  editButton.className = "btn-edit btn";
 
-  deleteButton.className = "delete";
+  deleteButton.className = "btn btn_delete";
   deleteButtonImg.src = "./remove.svg";
+  deleteButtonImg.className = "btn_img";
   deleteButton.appendChild(deleteButtonImg);
 
   //and appending.
@@ -139,7 +144,7 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   //select ListItems children
   var checkBox = taskListItem.querySelector("input[type=checkbox]");
   var editButton = taskListItem.querySelector("button.btn-edit");
-  var deleteButton = taskListItem.querySelector("button.delete");
+  var deleteButton = taskListItem.querySelector("button.btn_delete");
 
   //Bind editTask to edit button.
   editButton.onclick = editTask;
