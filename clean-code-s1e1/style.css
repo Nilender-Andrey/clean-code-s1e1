@@ -137,7 +137,7 @@ button.delete img:hover {
 }
 
 /* Completed */
-ul#third-section label {
+ul#th-section label {
   text-decoration: line-through;
   color: #888;
 }
