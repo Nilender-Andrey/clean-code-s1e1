@@ -118,6 +118,9 @@
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
+  border: none;
+  background-color: transparent;
+  color: #333;
 }
 .item > .item__input_style-text {
   width: 226px;
