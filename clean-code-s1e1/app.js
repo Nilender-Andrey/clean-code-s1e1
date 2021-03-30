@@ -30,23 +30,23 @@ var createNewTaskElement = function (taskString) {
   var deleteButtonImg = document.createElement("img"); //delete button image
 
   label.innerText = taskString;
-  label.className = "style-text label_style-text";
+  label.className = "style-text item__label_style-text";
 
   //Each elements, needs appending
   checkBox.type = "checkbox";
-  checkBox.className = "checkbox";
+  checkBox.className = "item__checkbox";
 
   editInput.type = "text";
-  editInput.className = "style-text input_style-text";
+  editInput.className = "item__input_style-text style-text";
 
   listItem.className = "item";
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className = "btn-edit btn";
+  editButton.className = "item__btn-edit btn";
 
-  deleteButton.className = "btn btn_delete";
+  deleteButton.className = "btn item__btn_delete";
   deleteButtonImg.src = "./remove.svg";
-  deleteButtonImg.className = "btn_img";
+  deleteButtonImg.className = "item__btn-img";
   deleteButton.appendChild(deleteButtonImg);
 
   //and appending.
@@ -81,7 +81,7 @@ var editTask = function () {
 
   var editInput = listItem.querySelector("input[type=text]");
   var label = listItem.querySelector("label");
-  var editBtn = listItem.querySelector(".btn-edit");
+  var editBtn = listItem.querySelector(".item__btn-edit");
   var containsClass = listItem.classList.contains("edit-mode");
   //If class of the parent is .editmode
   if (containsClass) {
@@ -143,8 +143,8 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   console.log("bind list item events");
   //select ListItems children
   var checkBox = taskListItem.querySelector("input[type=checkbox]");
-  var editButton = taskListItem.querySelector("button.btn-edit");
-  var deleteButton = taskListItem.querySelector("button.btn_delete");
+  var editButton = taskListItem.querySelector("button.item__btn-edit");
+  var deleteButton = taskListItem.querySelector("button.item__btn_delete");
 
   //Bind editTask to edit button.
   editButton.onclick = editTask;
